@@ -88,6 +88,13 @@ const styles = theme => ({
   divider: {
     marginTop: theme.spacing.unit * 2,
   },
+  img: {
+    width: "50px",
+    top: "22px",
+    position: "absolute",
+    verticalAlign: "middle",
+    border: "0"
+  },
   logo: {
     position: "relative",
     padding: "15px 15px",
@@ -105,9 +112,9 @@ const styles = theme => ({
   },
   logoLink: {
     textTransform: "uppercase",
-    padding: "5px 0",
+    padding: "7px 0 0 20px",
     display: "block",
-    fontSize: "18px",
+    fontSize: "20px",
     textAlign: "left",
     fontWeight: "400",
     lineHeight: "30px",
@@ -134,27 +141,14 @@ function Navigator(props) {
       <List disablePadding>
 
         <ListItem className={classNames(classes.item, classes.itemCategory)}>
-        <div className={classes.logo}>
+
           <a href="https://www.creative-tim.com" className={classes.logoLink}>
             <div className={classes.logoImage}>
-              <img src={logo} alt="logo" className={classes.img} height = "50" width = "100"/>
+              <img src={logo} alt="logo" className={classes.img}/>
             </div>
             Items
           </a>
-        </div>
-        </ListItem>
-        
-        <ListItem className={classNames(classes.item, classes.itemCategory)}>
-          <ListItemIcon>
-            <HomeIcon />
-          </ListItemIcon>
-          <ListItemText
-            classes={{
-              primary: classes.itemPrimary,
-            }}
-          >
-            Ítems
-          </ListItemText>
+
         </ListItem>
         {categories.map(({ id, children }) => (
           <React.Fragment key={id}>
